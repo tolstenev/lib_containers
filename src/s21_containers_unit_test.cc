@@ -2,7 +2,14 @@
 #include "s21_containers.h"
 #include "s21_containersplus.h"
 
-TEST(Array, EmptyTest) {
+// Все тесты на контейнер должны начинаться с одного и того же названия.
+// Например, Array. Это нужно для того, чтобы они были объединены в один
+// test suite и их можно было раздельно запускать make test_array
+TEST(Array, EmptyTest1) {
+
+}
+
+TEST(Array, EmptyTest2) {
 
 }
 

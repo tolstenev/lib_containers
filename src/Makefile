@@ -6,8 +6,8 @@ LIB+		:= $(NAME+).h
 CC			:= gcc
 CPP_FLAGS	:= -lstdc++ -std=c++17 -pedantic -Wall -Werror -Wextra
 GTEST_FLAGS	:= -lgtest
-TEST_NAME	:= $(NAME)_unit_test
-SRC_TEST	:= $(TEST_NAME).cc
+TEST		:= $(NAME)_unit_test
+SRC_TEST	:= $(TEST).cc
 
 CONTAINERS  := s21_vector \
 			   s21_list \
@@ -26,13 +26,39 @@ SRC_FILES	:= $(SRCS) $(HDRS)
 
 all: test
 
-test: $(SRC_TEST) $(FILES)
+compile_test: $(SRC_TEST) $(FILES)
 		@clear
-		$(CC) $(CPP_FLAGS) $(GTEST_FLAGS) $(SRC_TEST) -o $(TEST_NAME).out
-		./$(TEST_NAME).out
+		$(CC) $(CPP_FLAGS) $(GTEST_FLAGS) $(SRC_TEST) -o $(TEST).out
+
+test: compile_test
+		./$(TEST).out
+
+test_array: compile_test
+		./$(TEST).out --gtest_filter="Array.*"
+
+test_list: compile_test
+		./$(TEST).out --gtest_filter="List.*"
+
+test_map: compile_test
+		./$(TEST).out --gtest_filter="Map.*"
+
+test_multiset: compile_test
+		./$(TEST).out --gtest_filter="Multiset.*"
+
+test_queue: compile_test
+		./$(TEST).out --gtest_filter="Queue.*"
+
+test_set: compile_test
+		./$(TEST).out --gtest_filter="Set.*"
+
+test_stack: compile_test
+		./$(TEST).out --gtest_filter="Stack.*"
+
+test_vector: compile_test
+		./$(TEST).out --gtest_filter="Vector.*"
 
 lint:
 		clang-format -i *.h */*.h */*.cc
 
 clean:
-		rm $(TEST_NAME).out
+		rm $(TEST).out
