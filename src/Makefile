@@ -9,25 +9,24 @@ GTEST_FLAGS	:= -lgtest
 TEST_NAME	:= $(NAME)_unit_test
 SRC_TEST	:= $(TEST_NAME).cc
 
-SRCS	    := s21_vector/s21_vector.cc \
-			   s21_list/s21_list.cc \
-			   s21_stack/s21_stack.cc \
-			   s21_queue/s21_queue.cc \
-			   s21_map/s21_map.cc \
-			   s21_set/s21_set.cc \
-			   s21_array/s21_array.cc \
-			   s21_multiset/s21_multiset.cc
-HDRS	    := s21_vector/s21_vector.h \
-			   s21_list/s21_list.h \
-			   s21_stack/s21_stack.h \
-			   s21_queue/s21_queue.h \
-			   s21_map/s21_map.h \
-			   s21_set/s21_set.h \
-			   s21_array/s21_array.h \
-			   s21_multiset/s21_multiset.h
+CONTAINERS  := s21_vector \
+			   s21_list \
+			   s21_stack \
+			   s21_queue \
+			   s21_map \
+			   s21_set \
+			   s21_array \
+			   s21_multiset
 
+SRCS		:= $(foreach container, $(CONTAINERS), \
+			     $(addprefix $(container)/, $(addsuffix .cc, $(container))))
+HDRS		:= $(foreach container, $(CONTAINERS), \
+			     $(addprefix $(container)/, $(addsuffix  .h, $(container))))
+SRC_FILES	:= $(SRCS) $(HDRS)
 
-test: $(SRC_TEST) $(SRCS) $(HDRS)
+all: test
+
+test: $(SRC_TEST) $(FILES)
 		@clear
 		$(CC) $(CPP_FLAGS) $(GTEST_FLAGS) $(SRC_TEST) -o $(TEST_NAME).out
 		./$(TEST_NAME).out
