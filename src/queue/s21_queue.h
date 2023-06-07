@@ -1,6 +1,10 @@
 #ifndef LIB_CONTAINERS_SRC_QUEUE_S21_QUEUE_H_
 #define LIB_CONTAINERS_SRC_QUEUE_S21_QUEUE_H_
 
-namespace s21 {}  // namespace s21
+namespace s21 {
+
+
+
+}  // namespace s21
 
 #endif  // LIB_CONTAINERS_SRC_QUEUE_S21_QUEUE_H_
