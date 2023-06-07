@@ -2,9 +2,14 @@
 #define LIB_CONTAINERS_SRC_STACK_S21_STACK_H_
 
 namespace s21 {
+template <typename T>
+class Stack {
+  using value_type = T;
+  using reference = T&;
+  using const_reference = const T&;
+  using size_type = std::size_t;
 
-
-
+};  // class Stack
 }  // namespace s21
 
 #endif  // LIB_CONTAINERS_SRC_STACK_S21_STACK_H_
