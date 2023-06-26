@@ -7,7 +7,6 @@ class Array {
   using value_type = T;
   using reference = T&;
   using const_reference = const T&;
-  using size_type = std::size_t;
 
 };  // class Array
 }  // namespace s21
