@@ -2,3 +2,13 @@ materials/
 misc/
 .idea/
 .DS_Store
+
+s21_containers_unit_test.out
+main_array
+main_list
+main_map
+main_multiset
+main_queue
+main_set
+main_stack
+main_vector
