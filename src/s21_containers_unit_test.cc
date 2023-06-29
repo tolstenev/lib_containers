@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 #include "s21_containers.h"
 #include "s21_containersplus.h"
+#include <list>
 
 // Все тесты на контейнер должны начинаться с названия контейнера,
 // например, Array. Это нужно для того, чтобы они были объединены в один
