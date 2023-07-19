@@ -2,11 +2,18 @@
 
 class ListTest : public testing::Test {
  protected:
-  // Здесь создаём объекты для тестов, инициализируем их
+  // Создание и инициализация объектов для тестов
+  s21::List<int> s21_list_int;
+  std::list<int> std_list_int;
 };
 
 TEST_F(ListTest, PushBack) {
-  // Сразу вызываем тестируемые методы для созданных в классе объектов
+  int value = 42;
+  // Вызов тестируемых методов
+  s21_list_int.push_back(value);
+  std_list_int.push_back(value);
 
-  // Сравниваем результаты
+  // Сравнение результатов
+  EXPECT_EQ(s21_list_int.front(), std_list_int.front());
+  EXPECT_EQ(s21_list_int.back(), std_list_int.back());
 }

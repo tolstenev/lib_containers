@@ -20,20 +20,23 @@ class List {
  public:  // class List
   using value_type = T;
   using reference = T &;
-  using node = ListNode<T>;
+  using const_reference = const T &;
   using iterator = ListIterator;
+  using node = ListNode<T>;
 
   List();
   ~List();
 
-  void push_back(value_type data);
+  void push_back(const_reference data);
+
+  const_reference front();
+  const_reference back();
 
   iterator begin();
   iterator end();
 
  private:  // class List
   node *end_{};
-  //  node *begin_ = end_ ? end_->next_ : nullptr;
 
   class ListIterator {
    public:  // class ListIterator
@@ -64,7 +67,7 @@ List<value_type>::~List() {  // Временное решение, течёт. �
 }
 
 template <class value_type>
-void List<value_type>::push_back(value_type data) {
+void List<value_type>::push_back(const_reference data) {
   node *last_node = end_->prev_;
   auto *new_node = new node;
   new_node->data_ = new value_type;
@@ -83,6 +86,16 @@ typename List<value_type>::iterator List<value_type>::begin() {
 template <class value_type>
 typename List<value_type>::iterator List<value_type>::end() {
   return iterator(end_->prev_);
+}
+
+template <class value_type>
+typename List<value_type>::const_reference List<value_type>::front() {
+  return *((end_->next_)->data_);
+}
+
+template <class value_type>
+typename List<value_type>::const_reference List<value_type>::back() {
+  return *((end_->prev_)->data_);
 }
 
 }  // namespace s21
