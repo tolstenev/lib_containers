@@ -1,7 +1,11 @@
 #include "s21_vector.h"
 
-namespace s21 {
+#include <iostream>
 
+// Этот файл предназначен для проверки кода в main
+// для запуска используйте `make main_vector`
 
-
-}  // namespace s21
+int main() {
+  std::cout << "s21_vector main" << std::endl;
+  return 0;
+}

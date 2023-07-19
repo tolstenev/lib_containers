@@ -11,4 +11,6 @@ class Set {
 };  // class Set
 }  // namespace s21
 
+// Располагайте методы ниже, т.е. за пределами класса
+
 #endif  // LIB_CONTAINERS_SRC_SET_S21_SET_H_

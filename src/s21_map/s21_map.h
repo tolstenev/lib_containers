@@ -11,4 +11,6 @@ class Map {
 };  // class Map
 }  // namespace s21
 
-#endif //LIB_CONTAINERS_S21_MAP_H
+// Располагайте методы ниже, т.е. за пределами класса
+
+#endif  // LIB_CONTAINERS_S21_MAP_H

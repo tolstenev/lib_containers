@@ -3,7 +3,7 @@
 
 namespace s21 {
 
-template<typename T>
+template <typename T>
 struct ListNode {
  public:
   using value_type = T;
@@ -13,9 +13,10 @@ struct ListNode {
   ListNode *next_{};
 };
 
-template<typename T>
+template <typename T>
 class List {
   class ListIterator;
+
  public:  // class List
   using value_type = T;
   using reference = T &;
@@ -32,24 +33,23 @@ class List {
 
  private:  // class List
   node *end_{};
-//  node *begin_ = end_ ? end_->next_ : nullptr;
+  //  node *begin_ = end_ ? end_->next_ : nullptr;
 
   class ListIterator {
    public:  // class ListIterator
     friend node;
     ListIterator() = default;
-    explicit ListIterator(node *p) : ptr_(p) {};
-    ListIterator(const ListIterator &other) : ptr_(other.ptr_) {};
+    explicit ListIterator(node *p) : ptr_(p){};
+    ListIterator(const ListIterator &other) : ptr_(other.ptr_){};
 
     reference operator*() { return *(ptr_->data_); }
 
    private:  // class ListIterator
     node *ptr_{};
   };  // class ListIterator
-};  // class List
+};    // class List
 
-
-template<typename T>
+template <typename T>
 List<T>::List() {
   end_ = new node;
   end_->data_ = nullptr;
@@ -57,13 +57,11 @@ List<T>::List() {
   end_->next_ = end_;
 }
 
-
 template <class value_type>
 List<value_type>::~List() {  // Временное решение, течёт. Переписать, когда
   // будет итератор листа
   if (this->end_) delete end_;
 }
-
 
 template <class value_type>
 void List<value_type>::push_back(value_type data) {
@@ -77,12 +75,10 @@ void List<value_type>::push_back(value_type data) {
   last_node->next_ = new_node;
 }
 
-
 template <class value_type>
 typename List<value_type>::iterator List<value_type>::begin() {
   return iterator(end_->next_);
 }
-
 
 template <class value_type>
 typename List<value_type>::iterator List<value_type>::end() {
@@ -91,7 +87,4 @@ typename List<value_type>::iterator List<value_type>::end() {
 
 }  // namespace s21
 
-#endif //LIB_CONTAINERS_S21_LIST_H
-
-
-
+#endif  // LIB_CONTAINERS_S21_LIST_H
