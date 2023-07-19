@@ -11,4 +11,6 @@ class Vector {
 };  // class Vector
 }  // namespace s21
 
+// Располагайте методы ниже, т.е. за пределами класса
+
 #endif  // LIB_CONTAINERS_SRC_VECTOR_S21_VECTOR_H_

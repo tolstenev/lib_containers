@@ -11,4 +11,6 @@ class Stack {
 };  // class Stack
 }  // namespace s21
 
+// Располагайте методы ниже, т.е. за пределами класса
+
 #endif  // LIB_CONTAINERS_SRC_STACK_S21_STACK_H_

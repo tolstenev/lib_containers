@@ -1,7 +1,11 @@
 #include "s21_set.h"
 
-namespace s21 {
+#include <iostream>
 
+// Этот файл предназначен для проверки кода в main
+// для запуска используйте `make main_set`
 
-
-}  // namespace s21
+int main() {
+  std::cout << "s21_set main" << std::endl;
+  return 0;
+}

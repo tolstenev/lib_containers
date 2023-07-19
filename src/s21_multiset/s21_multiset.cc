@@ -1,7 +1,11 @@
 #include "s21_multiset.h"
 
-namespace s21 {
+#include <iostream>
 
+// Этот файл предназначен для проверки кода в main
+// для запуска используйте `make main_multiset`
 
-
-}  // namespace s21
+int main() {
+  std::cout << "s21_multiset main" << std::endl;
+  return 0;
+}

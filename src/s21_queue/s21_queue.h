@@ -11,4 +11,6 @@ class Queue {
 };  // class Queue
 }  // namespace s21
 
+// Располагайте методы ниже, т.е. за пределами класса
+
 #endif  // LIB_CONTAINERS_SRC_QUEUE_S21_QUEUE_H_

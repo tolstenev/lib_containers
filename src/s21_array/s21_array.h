@@ -11,4 +11,6 @@ class Array {
 };  // class Array
 }  // namespace s21
 
+// Располагайте методы ниже, т.е. за пределами класса
+
 #endif  // LIB_CONTAINERS_SRC_ARRAY_S21_ARRAY_H_

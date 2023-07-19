@@ -1,7 +1,11 @@
 #include "s21_queue.h"
 
-namespace s21 {
+#include <iostream>
 
+// Этот файл предназначен для проверки кода в main
+// для запуска используйте `make main_queue`
 
-
-}  // namespace s21
+int main() {
+  std::cout << "s21_queue main" << std::endl;
+  return 0;
+}

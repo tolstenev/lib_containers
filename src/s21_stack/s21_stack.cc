@@ -1,7 +1,11 @@
 #include "s21_stack.h"
 
-namespace s21 {
+#include <iostream>
 
+// Этот файл предназначен для проверки кода в main
+// для запуска используйте `make main_stack`
 
-
-}  // namespace s21
+int main() {
+  std::cout << "s21_stack main" << std::endl;
+  return 0;
+}

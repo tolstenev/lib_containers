@@ -1,16 +1,11 @@
 #include "s21_array.h"
 
-namespace s21 {
+#include <iostream>
 
+// Этот файл предназначен для проверки кода в main
+// для запуска используйте `make main_array`
 
-
-}  // namespace s21
-
-/*
-// for test something in main uncomment this
-// and run `make main_array`
 int main() {
-
+  std::cout << "s21_array main" << std::endl;
   return 0;
 }
-*/
